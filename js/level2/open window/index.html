@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript">
+		var name = 'I opened IT!'
+		var win;
+
+		function winOpen(){
+			var w = 500, h = 200;
+			var left = (screen.availWidth - w)/2;
+			var top = (screen.availHeight - h)/2;
+			var p = "width="+w+" ,height="+h+" ,top="+top+", left="+left;
+			win = window.open("","", p);
+			win.focus();
+		}
+		function docWrite() {
+			if(win && !win.closed){
+				win.focus();
+				var text = "";
+				text += "<html>";
+				text += "<head>";
+				text += "<title>Hayer</title>";
+
+				text += "<script>";
+				text += "alert(opener.name)";
+				text += "<\/script>";
+
+				text += "</head>";
+
+				text += "<body>";
+				text += "<p>My paragraph</p>";
+				text += "</body>";
+				text += "<html>";
+
+				win.document.open();
+				win.document.write(text);
+				win.document.close();
+			}
+
+		}
+		function winClose(){
+			if(win && !win.closed){
+				win.focus();
+				win.close();
+			}
+			
+		}
+			</script>
+
+
+
+
+
+</head>
+<body>
+	<p class="p1"><a href="javascript:winOpen();">Open Window</a></p>
+	<p class="p3"><a href="javascript:docWrite();">Write Window</a></p>
+	<p class="p2"><a href="javascript:winClose();">Close Window</a></p>
+	
+</body>
+</html>

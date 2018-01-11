@@ -1,0 +1,16 @@
+body{
+	background:#d2d2d2;
+}
+.faq{
+	margin:55px 50px;
+}
+.question{
+	font-size: 30px;
+	
+
+}
+.answer{
+	display:none;
+	background: yellow;
+	width: 400px;
+}

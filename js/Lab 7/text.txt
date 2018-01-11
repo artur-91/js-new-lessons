@@ -1,0 +1,36 @@
+//Event Properties
+
+Any source
+- type 
+(this is a type of event, for example "click" )
+
+- target (W3C DOM) / srcElement (IE)
+(this is link to the object in winch occurs this event)
+
+- currentTarget (W3C DOM) / srcElement (IE)
+(it it is connected with bubbling,
+ if haven't bubbling, then target and currentTarget
+ are same, if we have bubbling, then Target
+ always indicate to source, and currentTarget is currentTarget
+ element in witch this event has taken place)
+
+
+Mouse Source
+-button
+(what key is pess. only left button of Mouse
+run in all browsers similar, other keys in may run in different way )
+
+-altKey, ctrlKey, shiftKey
+(if with mouse keys are clamped one 
+of keys alt, control or shift, then properties 
+altKey, ctrlKey, shiftKey will have value true)
+
+-clientX, clientY
+(this properties are points of reference of
+browser window(body) )
+
+
+
+Keyboard Source
+-keyCode
+(this return number of key)

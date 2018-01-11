@@ -1,0 +1,98 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Laboratory 7</title>
+	<script src="jquery.js" type="text/javascript"></script>
+	<script>
+	/** TASK 1
+  - To create the inOut method which emulates functionality of the slideToggle and fadeToggle methods
+   The slideToggle and fadeToggle methods in a code not to use!
+  - The method has to be caused approximately so:
+   $ ('div.container') .inOut ();
+  - The inOut method has to be fulfilled when pressing the Press Me button approximately so:
+   $ ('button') .on ('click', function () {
+    $ ('div.container') .inOut ();
+   });
+
+  - Hints:
+   - to use animate
+   - jQuery allows use of the line "toggle" as values for sv-in "height" and "opacity"
+   - to provide a possibility of change of speed
+	*/
+	$(function(){
+		// $.fn.inOut = function(speed){
+		// 	return $(this).animate({
+		// 		'opacity':'toggle',
+		// 		'height': "toggle",
+
+		// 	},speed ||2000)
+		// }
+		// $.fn.inOut = function(speed,fn){
+		// 	return $(this).animate({
+		// 		'opacity':'toggle',
+		// 		'height': "toggle",
+
+		// 	},speed ||2000,fn)
+		// }
+		// 
+		$.fn.inOut = function(speed,fn){
+			
+			return $(this).animate({
+				'opacity':'toggle',
+				'height': "toggle",
+
+			},speed ||2000,function(){$.isFunction(fn)&&fn.call(this);})
+		}
+
+
+
+
+
+
+		$('button').on('click',function(){
+			// $('div.container').inOut().addClass('hello');
+			// $('div.container').inOut(500).addClass('hello');
+			// $('div.container').inOut(1500,function(){
+			// 	console.log('here is');
+			// })
+			//$('div.container').inOut(500);
+			$('div.container').inOut(500,function(){
+				console.log('I am a Function')
+			})
+
+		})
+	})
+	</script>
+	<style>
+	body { width: 400px; margin: 100px auto; }
+
+	.container {
+		width: 400px;
+		background: yellow;
+		position: relative;
+		overflow: hidden;
+		padding: 1em;
+	}
+	</style>
+</head>
+<body>
+
+
+<div class="container">
+	<h2>Some Text</h2>
+	<p>
+		With an ulterior motive the lead vessel instantly opens a quasi-elastic flask. 
+	The roundabout is fast and short-term. 
+	Often happens that the nuclear pad is rough and thought over.
+	Obviously, the phenomenal gear wheel of a tarpaulin set carefully increases a secret lamp.
+	Graceful value sharply and metastabilno. Platinum inertia of the fused insulator forms division.
+</div>
+
+<p><button>Click Me</button></p>
+
+<script>
+
+</script>
+</body>
+</html>

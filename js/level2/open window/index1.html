@@ -1,0 +1,89 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Open new Window AND write it with some....</title>
+<style type="text/css">
+html{background:#fff;font:16px calibri, sans-serif;cursor:default;}
+p{float:left;margin:0 8px 0 0;padding:20px;}
+.p1{background:#ccf;}
+.p2{background:#fcc;}
+.p3{background:#cfc;}
+</style>
+
+<script type="text/javascript">
+
+var name = 'I opened IT!';
+/*	
+1. Open new window withcfollowing parameters:
+width: 500, heigth: 200
+it must be opened in center of screen,
+2. give it the focus() method.
+*/
+
+var win; //new window
+function winOpen() {
+	var w = 500, h = 200;
+	var left = (screen.availWidth-w)/2;
+	var top = (screen.availHeight-h)/2;
+	var p = "width="+w+" ,height="+h+" ,top="+
+	top+", left="+left;
+	win = window.open("", "", p);
+	win.focus();
+}
+
+/*
+1. Write in document elements html, head, body, title
+2. include element  style with content:
+«html{background:#369;color:#fff;font:16px calibri, sans-serif;}»
+3. include paragraph with text "My paragraph"
+4. include script with сontent  «alert(opener.name)»
+*/
+
+function docWrite() {
+if(win && !win.closed){
+win.focus();
+var text = "";
+text += "<html>";
+text += "<head>";
+text += "<title>Hayer</title>";
+
+text += "<script>";
+text += "alert(opener.name)";
+text += "<\/script>";
+
+text += "</head>";
+
+text += "<body>";
+text += "<p>My paragraph</p>";
+text += "</body>";
+text += "<html>";
+
+win.document.open();
+win.document.write(text);
+win.document.close();
+}
+
+}
+/*	
+1. Check, if there are the window and are there it closed 
+2. if window are, close it.
+*/
+
+
+function winClose() {
+if(win && !win.closed){
+    win.focus();
+    win.close();
+    }
+}
+
+
+</script>
+</head>
+<body>
+<p class="p1"><a href="javascript:winOpen();">Open Window</a></p>
+<p class="p3"><a href="javascript:docWrite();">Write Window</a></p>
+<p class="p2"><a href="javascript:winClose();">Close Window</a></p>
+</body>
+</html>

@@ -1,0 +1,45 @@
+        HTMLTableElement
+
+Properties          Methods
+tHead               createCaption()
+tFoot               deleteCaption()
+tBodies[]           createTHead()
+rows[]              deleteTHead()
+caption             createTFoot()
+width               deleteTFoot()
+border              insertRow(index)
+cellPadding         deleteRow(index)
+cellSpacing
+
+        HTMLTableSectionElement
+        
+Properties          Methods
+
+rows                insertRow(index)
+align               deleteRow(index)
+vAlign
+
+
+        HTMLTableRowElement
+        
+Properties          Methods
+ 
+cells               insertCell(index)
+rowIndex            deleteCell(index)
+sectionRowIndex
+vAlign
+bgColor
+
+            HTMLTableRowElement
+        
+Properties             Methods
+
+cellIndex
+colSpan
+rowSpan
+align
+vAlign
+width
+height
+textContent
+

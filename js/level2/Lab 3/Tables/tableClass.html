@@ -1,0 +1,77 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Table Generation</title>
+<style type="text/css">
+html{font:18px calibri, sans-serif;}
+table{cursor:default;}
+td{padding:10px;border:1px solid #369;}
+sup{padding-left:4px;font-size:14px;color:#678;}
+thead td{background:#ccf;}
+tfoot td{background:#cfc;}
+caption{padding:5px;white-space:nowrap;border:1px solid #d30;background:#ffc;}
+</style>
+<script type="text/javascript">
+/*Account of Cells*/
+var td_count = 10;
+
+/*Table*/
+var t;
+
+function createContent() {
+	t = window.tbl;
+	/*Calling function for generation rows for difference section*/
+	if (!t.rows.length) {
+		create(t.tBodies[0] || t, 4);
+		create(t.createTHead(), 2);
+		create(t.createTFoot(), 3);
+	}
+	
+	/*Function fills the transferred section with the necessary quantity of lines*/
+	function create(section, tr_count) {
+		for (var i = 0, tr; i < tr_count; i++) {
+			/*Adding row to section*/
+			/*Length of a collection changes dynamically*/
+			tr = section.insertRow(section.rows.length);
+			
+			/*And here it is also necessary to put the handler of click at line*/
+			//tr.onclick = deleteRow;
+			for (var j = 0, td; j < td_count; j++) {
+				/*Adding cells to row*/
+				td = tr.insertCell(tr.cells.length);
+				/*In cell write number of cells*/
+				td.innerHTML = tr.cells.length;
+				
+				/*In element <sup> put the number of row*/
+				td.innerHTML += '<sup>' + section.rows.length + '</sup>';
+				//td.textContent += '<sup>' + section.rows.length + '</sup>';
+			}
+		}
+	}
+}
+	/*Function for deleting table*/
+	function deleteContent() {
+		if(t.tHead)
+			t.deleteTHead();
+		if(t.tFoot)
+			t.deleteTFoot();
+		if(t.tBodies){
+			if (t.tBodies[0].rows.length){
+				for (var i = t.tBodies[0].rows.length; i > 0; i--){
+					t.tBodies[0].deleteRow(t.tBodies[0].rows[i]);
+				}
+			}
+		}
+	}
+</script>
+</head>
+<body>
+<a href="javascript:createContent();">Create Table</a>
+&nbsp;|&nbsp;
+<a href="javascript:deleteContent();">Delete Table</a>
+<table id="tbl">
+	<caption>TABLE</caption>
+</table>
+</body>
+</html>

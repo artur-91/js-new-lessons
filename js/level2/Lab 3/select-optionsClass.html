@@ -1,0 +1,63 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>Using elements SELECT and OPTION</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<style type="text/css">
+		a{visibility:hidden}
+	</style>
+	<script type="text/javascript">
+		/*
+		** Links collection
+		*/
+		var links = new Object();
+		links["Яндекс"] = "http://www.yandex.ru";
+		links["Рамблер"] = "http://www.rambler.ru";
+		links["Гугл"] = "http://www.google.ru";
+		function goToURl(){
+			var s = document.myform.selURL;
+			var url = s.options[s.selectedIndex].value;
+			location.assign(url);
+		}
+
+	</script>
+</head>
+
+<body>
+	<h1>Using elements SELECT and OPTION</h1>
+	<form id="myForm" name="myForm">
+		<label for="selURL" disabled>Choose address</label>
+		<select id="selURL" name="selURL" disabled></select>
+		<a href="javascript:goToURL()">Go To Site</a>
+	</form>
+	
+	<script type="text/javascript">
+		
+		// Creating in list of SELECT elements OPTION
+		var s = document.myForm.selURL;
+		for (var linkName in links){
+			var o = new Option();
+			o.value = links[linkName];
+			o.text = linkName;
+			/* or
+				var o = new Option(linkName, links[linkName]); 
+			*/
+			
+		try{
+			s.add(o,null);
+		}
+		catch(e){
+			s.add(o);
+		}
+		}
+
+		// We will make all elements of  form available
+		var f = document.myForm; // or s.form
+		for (var i=0; i < f.elements.length; i++){
+			f.elements[i].disabled = false;
+		}
+		document.querySelector('form a').style.visibility = 'visible' ;
+		
+	</script>
+</body>
+</html>

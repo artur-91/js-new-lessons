@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+	<title>Event object</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+	<style type="text/css">
+		body { width: 100%; height: 100%; cursor: crosshair }
+		#result { position: absolute; top: 0px; right: 0px; width: 300px; font-size: 80%; background-color:#cfc; padding: 10px }
+	</style>
+	<script type="text/javascript">
+	window.onload = function (){
+		document.body.addEventListener('mousemove',
+			showEventProperties,false);
+		document.body.addEventListener('mousedown',
+			showEventProperties,false);
+		document.body.addEventListener('mouseup',
+			showEventProperties,false);
+		document.body.addEventListener('keyup',
+			showEventProperties,false);
+		document.body.addEventListener('keydown',
+			showEventProperties,false);
+
+}
+		 function showEventProperties(e){
+		 
+			e = e || event;
+			var result = document.getElementById("result");
+			result.innerHTML = 
+				"x: " + e.x + "<br>" + 
+				"y: " + e.y + "<br>" + 
+				"clientX: " + e.clientX + "<br>" + 
+				"clientY: " + e.clientY + "<br>" + 
+				"offsetX: " + e.offsetX + "<br>" + 
+				"offsetY: " + e.offsetY + "<br>" + 
+				"screenX: " + e.screenX + "<br>" + 
+				"screenY: " + e.screenY + "<br>" + 
+				"button: " + e.button + "<br>" +
+				"keyCode: " + e.keyCode + "<br>" +
+				"altKey: " + e.altKey + "<br>" +
+				"ctrlKey: " + e.ctrlKey + "<br>" +
+				"shiftKey: " + e.shiftKey + "<br>" +
+				"target: " + e.target.tagName;
+		 }
+		
+	</script>
+</head>
+
+<body >
+	<pre id="result">234</pre>
+	<h1>Event object</h1>
+	<div>
+		<h2>Heading</h2>
+		<p>
+			Paragraph
+			<strong>bold text</strong>
+		</p>
+	</div>
+</body>
+</html>

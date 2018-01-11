@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Installation of event handlers in basic model</title>
+<style type="text/css">
+html{background:#fff;cursor:default;font:16px calibri, sans-serif;}
+div{padding:20px;border:5px solid #69c;}
+p{margin:0;padding:30px;background:#ccf;}
+</style>
+</head>
+<body>
+<!--<div id="a">
+	<p id="p1" >Click Here</p>
+	<p id="p2" >Click Here</p>
+	<p id="p3" >Click Here</p>
+</div>-->
+<div id="a">
+	<p id="p1" ><a href="https://google.am" id = "link">Click Here</a></p>
+	<p id="p2" >Click Here</p>
+	<p id="p3" >Click Here</p>
+</div>
+<script type="text/javascript">
+	/*var p1 = document.getElementById('p1');
+	var p2 = document.getElementById('p2');
+	var p3 =  document.getElementById('p3');
+	function funk(el){
+		console.log(el)
+	}*/
+	var div = document.getElementById('a');
+	/*function funk1 (){console.log(this)}
+	div.onclick = funk1;
+	div.addEventListener('click',funk,false);
+	try{
+		div.addEventListener('click',funk,false);
+	}
+	catch (x){
+		div.attachEvent('onclick',funk)
+	}*/
+	
+	/*function kanch(el,ev,funk2){
+		try{
+			el.addEventListener(ev,funk2,true)
+		}
+		catch(x){
+			el.attachEvent('on'+ev,funk2)
+		}
+	}*/
+	/*function funk(){
+		console.log('hello123')
+	}
+	function funk1(){
+		console.log('hello456')
+	}*/
+	
+	//kanch(div,'click',funk);
+	//kanch(div,'click',funk);
+	//var p1 = document.getElementById('p1');
+	//kanch(p1,'click',funk);
+	//kanch(div,'click',funk);
+	//function funk(){
+	//	console.log(this)
+	//}
+	/*function kanch(el,ev,funk2){
+		try{
+			el.addEventListener(ev,funk2,false)
+		}
+		catch(x){
+			el.attachEvent('on'+ev,funk2)
+		}
+	}
+	function removekanch(el,ev,funk2){
+		try{
+			el.removeEventListener(ev,funk2,false)
+		}
+		catch(x){
+			el.dettachEvent('on'+ev,funk2)
+		}
+	}
+	function funk(){
+		console.log('helo123')
+	}
+	function funk1(){
+		console.log('helo456')
+		removekanch(div,'click',funk)
+	}
+	kanch(div,'click',funk);
+	kanch(div,'click',funk1)
+*/
+/*function kanch(el,ev,funk2){
+		try{
+			el.addEventListener(ev,funk2,false)
+		}
+		catch(x){
+			el.attachEvent('on'+ev,funk2)
+		}
+	}
+	function removekanch(el,ev,funk2){
+		try{
+			el.removeEventListener(ev,funk2,false)
+		}
+		catch(x){
+			el.dettachEvent('on'+ev,funk2)
+		}
+	}
+	function funk(e){
+		e = e|| event;
+		console.log(e)
+	}
+	kanch(div,'click',funk);
+*/
+var div = document.getElementById('a')
+function kanch(el,ev,funk2){
+		try{
+			el.addEventListener(ev,funk2,false)
+		}
+		catch(x){
+			el.attachEvent('on'+ev,funk2)
+		}
+	}
+	function removekanch(el,ev,funk2){
+		try{
+			el.removeEventListener(ev,funk2,false)
+		}
+		catch(x){
+			el.dettachEvent('on'+ev,funk2)
+		}
+	}
+	function funk(e){
+		e = e|| event;
+		console.log(e);
+		try{
+			e.preventDefault()
+		}
+		catch(x){
+			e.returnValue()= false;
+		}
+	}
+	kanch(div,'click',funk);
+</script>
+</body>
+</html>

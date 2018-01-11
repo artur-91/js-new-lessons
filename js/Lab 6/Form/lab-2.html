@@ -1,0 +1,86 @@
+﻿<!doctype html>
+<html>
+<head>
+	<title>Checking form before sending</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		form div input { border-style: solid; border-color: #999 }
+		a{background:silver;color:black;border:3px groove silver;text-decoration: none;font-weight:bold}
+		div.button{margin-top:10px}
+	</style>
+	<script type="text/javascript">
+		/*
+		create and explain function checkForm(), that calls before form sending.
+		With function must be chek: are all fiels fill in.
+		If all fileds are fill in, then send the form, else
+		if at least one is not fill
+		- give out alert() with some notice text;
+		-change to red color of border of empty field;
+		-dates do not send .
+					*/
+		
+		function checkForm(){
+			var f =document.forms[0];
+			var elm = f.elements;
+			var isEmpty = false;
+			for (var i=0; i< elm.length; i++){
+				//we need to only text type elements
+			if(elm[i].type == "text"){
+
+				if(elm[i].value == ""){
+			elm[i].style.borderColor="red";
+			isEmpty = true;
+				}
+			else {
+			elm[i].style.borderColor="";
+			}
+		} 
+	}  // end of for
+	if(isEmpty) alert('Fill in ALL fields!!!!!');
+	//else f.submit();
+	return !isEmpty;
+}
+	</script>	
+</head>
+
+
+
+
+
+
+
+
+
+
+<body>
+	<h1>Chek form before sending</h1>
+	<form id="myForm" name="myForm" action="https://youtube.com" onsubmit="return checkForm()">
+		<fieldset>
+			<legend>Form</legend>
+			<div>
+				<label for="txt1">Field 1</label>
+				<input type="text" name="p1" id="txt1">
+			</div>
+			<div>
+				<label for="txt2">Field 2</label>
+				<input type="text" name="p2" id="txt2">
+			</div>
+			<div>
+				<label for="txt3">Field 3</label>
+				<input type="text" name="p3" id="txt3">
+			</div>
+			<div>
+				<label for="txt4">Field 4</label>
+				<input type="text" name="p4" id="txt4">
+			</div>
+			<div>
+				<label for="txt5">Field 5</label>
+				<input type="text" name="p5" id="txt5">
+			</div>
+			
+			<input type="submit" value='send form' >
+			
+		</fieldset>
+	</form>
+</body>
+</html>

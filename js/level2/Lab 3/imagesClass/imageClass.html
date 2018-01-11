@@ -1,0 +1,45 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Using Images</title>
+<script type="text/javascript">
+	function changeImage(){
+		var i = document.images.square;
+		i.src = 'i/green.png'
+	}
+	var flag = false	
+	function loopImage(){
+		var i = document.images.square;
+		if(flag){
+			i.src = 'i/red.png'
+		}
+		else{
+			i.src = "i/green.png"
+		}
+		flag = !flag
+	}
+	function changeSize(){
+		var i = document.images.beach;
+		var normalWidth = 640;
+		if(i.width < normalWidth){
+			i.width *= 1.1;
+			i.height *=1.1 ;
+			setTimeout('changeSize()',50)
+		}
+	}	
+</script>
+</head>
+<body>
+
+<h1>Using Images</h1>
+
+<img src="i/red.png" name="square" width="200" height="200">
+<br>
+<a href="javascript:changeImage()">Change picture</a><br>
+<a href="javascript:loopImage()">Change image by loop</a>
+<br>
+<a href="javascript:changeSize()">change size</a>
+<img src="i/images (1).jpg" name="beach" width="50px" height="50px">
+</body>
+</html>

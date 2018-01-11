@@ -1,0 +1,122 @@
+﻿<!doctype html>
+
+<html>
+<head>
+	<title>Revealing the list</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		ul.expandable li { list-style-image: url('img/point.gif') }
+		li ul.expandable { display: none } /* change to none */
+	</style>
+	<script type="text/javascript">
+		/*
+			Describe the function setPlusIcon() which
+			- set for the li elements a sign [+], 
+   				 if this element has the enclosed list
+			- registers the aClick function as the handler of an event of "onclick"
+    			for all links
+		*/
+		/*
+			Start the function  setPlusIcon() in loading the page
+		*/
+		function setPlusIcon(){
+			var allLies = document.getElementsByTageName('li');
+			for(var i = 0;i < allLies.length; i++){
+				var li = allLies[i];
+				var allules = li.getElementsByTageName('ul');
+				if(allules.length > 0){
+					if(allules[0].className = 'expandable'){
+						li.style.listStyleImage = "url('img/plus.gif')";
+					}
+				}
+			}
+			var alla = document.getElementsByTageName('a');
+			for(var i = 0;i <alla.length; i++){
+				alla[i].addEventListener('click',aClick,false);
+			}
+		}
+		window.onload = setPlusIcon;
+		function aClick(e){
+			e = e|| event;
+			var objA = e.target || e.srcElement;
+			var li = objA.parentNode;
+			var uls = li.getElementsByTageName("ul");
+			if(uls.length == 0) return false;
+			if(uls[0].style.display == 'block') {
+				uls[0].style.display == 'none';
+				li.style.listStyleImage = "url('img/plus.gif')";
+			}
+			else{
+				uls[0].style.display = 'block';
+				li.style.listStyleImage = "url('img/minus.gif')"
+			}
+			try{
+				e.preventDefault();
+
+			}
+			catch(x){
+				e.returnValue = false;
+			}
+		}
+		/*
+			Describe the function aClick() which processes click in link
+			1. Receive an object - the link  according to which the click has been made
+			2. Find parent of li
+			3. Find the enclosed list
+			4. If there are no enclosed lists - allow click-through
+			5. Appoint to the enclosed list the necessary properties and change an icon
+			6. Forbid click-through
+		*/
+		
+		
+	</script>
+</head>
+
+<body>
+	<h1>Example of the revealing list</h1>
+	<ul class="expandable">
+		<li>
+			<a href="#">Books</a>
+			<ul class="expandable">
+				<li>
+					<a href="#">Armenian</a>
+					<ul class="expandable">
+						<li><a href="#">Dreams</a></li>
+						<li><a href="#">Scientific</a></li>
+						<li><a href="#">Hystorical</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Foreign</a>
+					<ul class="expandable">
+						<li><a href="#">Dreams</a></li>
+						<li><a href="#">Scientific</a></li>
+						<li><a href="#">Hystorical</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+ 		<li>
+			<a href="#">DVD</a>
+			<ul class="expandable">
+				<li>
+					<a href="#">Armenian</a>
+					<ul class="expandable">
+						<li><a href="#">Dreams</a></li>
+						<li><a href="#">Scientific</a></li>
+						<li><a href="#">Hystorical</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Foreign</a>
+					<ul class="expandable">
+						<li><a href="#">Dreams</a></li>
+						<li><a href="#">Scientific</a></li>
+						<li><a href="#">Hystorical</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>

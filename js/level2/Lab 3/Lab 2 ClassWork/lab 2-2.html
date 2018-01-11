@@ -1,0 +1,48 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>List element generation</title>
+<link rel="stylesheet" type="text/css" href="css/form.css">
+<script type="text/javascript">
+/*  Explain function addYear(), with argument is
+flag - number that
+Опишите функцию addYear(), которая аргумент:
+		flag - число, pointing to the place of addition of the new option element:
+			0 - in start of list
+			1 - in end of list
+	1. find the form
+	2. Be defined where to add an element: in the end, or in the beginning of the list
+	3. Define value of the last element of the list and increase or reduce him on 1
+	4. Create a new element of the list
+	5. Crossbrowsing add the created element to the beginning or the end of the list
+*/	
+	function addYear(flag){
+		
+	}
+</script>
+</head>
+<body>
+<form action="">
+	<fieldset>
+		<legend>Change elements of list</legend>
+		<div class="block">
+			<label for="year"><span>Birth Year</span></label>
+			<div class="group">
+				<a href="javascript:addYear(0);">-</a>
+				<select name="year" id="year">
+					<option value="1995">1995</option>
+					<option value="1996">1996</option>
+					<option value="1997">1997</option>
+					<option value="1998">1998</option>
+					<option value="1999">1999</option>
+					<option value="2000">2000</option>
+				</select>
+				<a href="javascript:addYear(1);">+</a>
+			</div>
+		</div>
+	</fieldset>
+</form>
+<script src='js/scripts.js'></script>
+</body>
+</html>

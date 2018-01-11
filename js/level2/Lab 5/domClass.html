@@ -1,0 +1,47 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Search nodes in document tree</title>
+<style type="text/css">
+html{background:#f93;cursor:default;}
+html, input, button{font:16px calibri, sans-serif;}
+div{margin:0 0 20px;padding:20px;border:5px solid #ffc;}
+p{margin:10px 0;background:#fff;padding:10px;}
+</style>
+<script type="text/javascript">
+
+	/*function f() {
+		var i = document.createElement("em");
+		i.appendChild(document.createTextNode("italic"));
+		var b = document.createElement("strong");
+		b.appendChild(document.createTextNode("text"));
+		var t = document.createTextNode('text');
+		var br = document.createElement('br');
+		var f = document.createDocumentFragment();
+		f.appendChild(i);
+		f.appendChild(b);
+		f.appendChild(t);
+		f.appendChild(br);
+		var d= document.getElementsByTagName('div');
+		for (var i = 0; i< d.length;i++){
+			d[i].insertBefore(f.cloneNode(true),d[i].firstChild)
+		}
+	}*/
+</script>
+</head>
+<body>
+<div id="d">
+	<p>First Paragraph</p>
+	<p id="clickable"><a href="javascript:f();">Second <b>Cilckable</b> paragraph</a></p>
+	<p>Trith Paragraph</p>
+</div>
+<div>
+	<p>Fourth Paragraph</p>
+	<p>Fifth paragraph</p>
+</div>
+<p>Sixth paragraph</p>
+<p>Seventh and last paragraph</p>
+<script src='js/code.js'></script>
+</body>
+</html>

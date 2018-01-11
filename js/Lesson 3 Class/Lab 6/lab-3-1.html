@@ -1,0 +1,68 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Laboratory 7</title>
+	<script src="jquery.js" type="text/javascript"></script>
+	<script>
+	/** TASK 1
+  - Tie an event of "mouseenter" to the <div> element at which 
+   - color of a background of the <div> element changes on yellow
+   - at the third element of the list color of a background changes on red
+	*/
+	/** TASK 2
+  - Tie an event of "click" to the <div> element at which the <ul> list SMOOTHLY disappears
+  */
+	/** TASK 3
+  - Tie an event of "mouseleave" to the <div> element at which 
+   - the <ul> list SMOOTHLY is shown
+   - colors of the <div> element and the third element of the list are restored to an initial state
+   $
+	*/$(function(){
+
+
+	$('#container').on('mouseenter',function(){
+			$(this).css({
+			background:'yellow'
+		})
+			.find('li').eq(2).css({
+				background:"red"
+			})
+
+	})
+	$('#container').on('click',function(){
+		$('ul').fadeOut()
+	})
+	
+	$('#container').on('mouseleave',function(){
+			$(this).css({
+			background:''
+		})
+			.find('li').eq(2).css({
+				background:""
+			})
+			.parent().fadeIn()
+
+
+	})
+	
+	})	
+	</script>
+	<style> 
+		.mylist{}
+		.container{border: 1px solid green; height:100px}
+	</style>
+	</head>
+
+
+	<body>
+		<h1>Trying JQuery Effects</h1>
+		<div id='container' class='container'>
+			<ul class="mylist"> 
+				<li>Position 1</li>
+				<li>Position 2</li> 
+				<li>Position 3</li>	
+			</ul>
+		</div>
+	</body>
+</html>

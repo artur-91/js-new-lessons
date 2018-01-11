@@ -1,0 +1,61 @@
+﻿<!doctype html>
+<html>
+<head>
+	<title>Checking form before sending</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		form div input { border-style: solid; border-color: #999 }
+		a{background:silver;color:black;border:3px groove silver;text-decoration: none;font-weight:bold}
+		div.button{margin-top:10px}
+	</style>
+	<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.css">
+	<link rel="stylesheet" href="css/form.css">
+	<script type="text/javascript">
+		/*
+		create and explain function checkForm(), that calls before form sending.
+		With function must be chek: are all fiels fill in.
+		If all fileds are fill in, then send the form, else
+		if at least one is not fill
+		- give out alert() with some notice text;
+		-change to red color of border of empty field;
+		-dates do not send .
+					*/
+		
+	</script>
+
+	<script src='js/ourjquery.js'></script>
+	<script src='js/script.js'></script>	
+</head>
+
+<body>
+	<h1>Chek form before sending</h1>
+	<form id="myForm" name="myForm" action="">
+		<fieldset>
+			<legend>Form</legend>
+			<div class="input">
+				<label for="txt1">Field 1</label>
+				<input type="text" name="p1" id="txt1"  class="check">
+			</div>
+			<div class="input">
+				<label for="txt2">Field 2</label>
+				<input type="text" name="p2" id="txt2"  class="check">
+			</div>
+			<div class="input">
+				<label for="txt3">Field 3</label>
+				<input type="text" name="p3" id="txt3"  class="check">
+			</div>
+			<div class="input">
+				<label for="txt4">Field 4</label>
+				<input type="text" name="p4" id="txt4"  class="check">
+			</div>
+			<div class="input">
+				<label for="txt5">Field 5</label>
+				<input type="text" name="p5" id="txt5"  class="check">
+			</div>
+			<div class="button">
+			<a href="javascript:checkForm()">Send</a>
+			</div>
+		</fieldset>
+	</form>
+</body>
+</html>

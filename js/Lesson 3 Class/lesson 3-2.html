@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>basic of Animation </title>
+	<script src="jquery.js" type="text/javascript"></script>
+	<script>
+		$(function(){
+			var content = $('div.content')
+			$('button').on('click',function(){
+				//content.css('font-size','+=2')
+				// content.css({
+				// 	"font-size":"+=2",
+				// 	'color':"green",
+				// 	'background':"gray"
+				// })
+			// 	content.animate({
+			// 		'font-size':'+=5',
+			// 		'width':'+=200'
+			// 	},2000,'linear',function(){$(this).css('left','400px')})
+			// })
+			// content.animate({
+			// 		'font-size':'+=5',
+			// 		'width':'+=200'
+			// 	},{
+			// 		duration:2000,
+			// 		complete:function(){console.log("stop")},
+			// 		//step:function(){console.log('here')},
+			// 		//step:function(){console.log(this)}
+			// 		step:function(){console.log('current size is:' + $(this).css('font-size'))}
+			// 	})
+			// content.animate({
+			// 	'font-size':'+=5'
+			// }{durarion:2000})
+			
+			// .animate({
+			// 	'font-size':'+=15'
+			// },4000)
+			// 
+			// var winW = $(window).width()/2 - content.outerWidth()/2;
+			// var winH = $(window).height()/2 - content.outerheight()/2;
+			// //console.log(winW)
+			// //content.css('left',winW)
+			// content.animate({
+			// 	'left':winW,
+			// 	'position':"absolute",
+
+			// }
+			// .animate({'top':winH},{duration:2000,queue:false});
+			// });
+			$.fn.myFunc = function(){
+				console.log('hello')
+			}
+			var winW  = $(window).width()/2 - content.outerWidth()/2;
+			var winH = $(window).height()/2 - content.outerHeight()/2;
+			content.myFunc();
+			content.animate({"left":winW,"position":"absolute"})
+			.animate({"top":winH},{duration:2000,queue:false})
+
+		});
+		});
+	</script>
+	<style>
+		.content{
+			width: 400px;
+			background: yellow;
+			padding: 2em;
+			position: relative
+		}
+	</style>
+</head>
+<body>
+
+<div class=content>
+	<h1>Some Text</h1>
+	<p>
+	With an ulterior motive the lead vessel instantly opens a quasi-elastic flask. 
+	The roundabout is fast and short-term. 
+	Often happens that the nuclear pad is rough and thought over.
+	Obviously, the phenomenal gear wheel of a tarpaulin set carefully increases a secret lamp.
+	Graceful value sharply and metastabilno. Platinum inertia of the fused insulator forms division.
+	</p>
+</div>
+<p><button>Change</button></p>
+
+<script>
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+.err{
+	outline : 1px solid red;
+}
+.focus{
+	box-shadow: 0 0 5px green;
+}
